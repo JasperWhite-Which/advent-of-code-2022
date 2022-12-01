@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
 class ElfCaloriesTest {
+
+    // Tests for Day 1 Question 1
     @Nested
     inner class GetMaxTotal {
         @Test
@@ -24,12 +26,16 @@ class ElfCaloriesTest {
             val fileName = "dec-one/input.txt"
             val inputData = readFile(fileName)
 
-            val result = ElfCalories().getMaxTotal(inputData)
-            println("The result is $result")
+            val actual = ElfCalories().getMaxTotal(inputData)
+            println("The result is $actual")
+            val expected = 67_450L
+
+            assertThat(actual).isEqualTo(expected)
 
         }
     }
 
+    // Tests for Day 1 Question 2
     @Nested
     inner class GetTopThreeTotal {
         @Test
@@ -48,8 +54,11 @@ class ElfCaloriesTest {
             val fileName = "dec-one/input.txt"
             val inputData = readFile(fileName)
 
-            val result = ElfCalories().getTopThreeTotal(inputData)
-            println("The result is $result")
+            val actual = ElfCalories().getTopThreeTotal(inputData)
+            println("The result is $actual")
+            val expected = 199_357L
+
+            assertThat(actual).isEqualTo(expected)
         }
     }
 

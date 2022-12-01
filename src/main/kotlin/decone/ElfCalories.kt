@@ -3,42 +3,29 @@ package decone
 class ElfCalories {
 
     fun getMaxTotal(list: List<String>?): Long {
-        val formattedList = formatList(list)
-        val sortedList = sortElfCalories(formattedList)
+        val formattedList = format(list)
 
-        return sortedList.max()
+        return formattedList.first()
     }
 
     fun getTopThreeTotal(list: List<String>?): Long {
-        val formattedList = formatList(list)
-        val sortedList = sortElfCalories(formattedList)
-        val rankedList = sortedList.sortedByDescending { it }
-        val top3 = rankedList.subList(0, 3)
+        val formattedList = format(list)
 
-        return top3.sum()
+        return formattedList.subList(0, 3).sum()
     }
 
-    private fun formatList(list: List<String>?): List<Long?> {
-        return list?.map {
-            if (it.isBlank()) null else it.toLong()
-        } ?: emptyList()
-    }
-
-    private fun sortElfCalories(list: List<Long?>): MutableList<Long> {
+    private fun format(list: List<String>?): List<Long> {
         val newList = mutableListOf(0L)
         var index = 0
-        list.forEach {
-            if (it == null) {
+        list?.forEach {
+            if (it.isBlank()) {
                 index += 1
                 newList.add(index, 0L)
             } else {
-                newList[index] = newList[index] + it
+                newList[index] = newList[index] + it.toLong()
             }
         }
-        return newList
+        return newList.toList().sortedByDescending { it }
     }
 
-    private fun MutableList<Long>.max(): Long {
-        return this.maxOrNull() ?: 0L
-    }
 }
