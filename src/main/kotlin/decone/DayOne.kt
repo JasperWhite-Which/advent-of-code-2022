@@ -1,14 +1,14 @@
 package decone
 
-class ElfCalories {
+class DayOne {
 
-    fun getMaxTotal(list: List<String>?): Long {
+    fun partOne(list: List<String>?): Long {
         val formattedList = format(list)
 
         return formattedList.first()
     }
 
-    fun getTopThreeTotal(list: List<String>?): Long {
+    fun partTwo(list: List<String>?): Long {
         val formattedList = format(list)
 
         return formattedList.subList(0, 3).sum()
