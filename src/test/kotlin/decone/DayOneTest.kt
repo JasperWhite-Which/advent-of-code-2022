@@ -1,11 +1,12 @@
 package decone
 
+import TestUtils
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-class DayOneTest {
+class DayOneTest: TestUtils() {
 
     // Tests for Day 1 Question 1
     @Nested
@@ -60,9 +61,5 @@ class DayOneTest {
 
             assertThat(actual).isEqualTo(expected)
         }
-    }
-
-    private fun readFile(filePath: String): List<String>? {
-        return this::class.java.classLoader.getResourceAsStream(filePath)?.bufferedReader()?.readLines()
     }
 }
