@@ -5,8 +5,8 @@ class DayTwo {
     fun partOne(list: List<String>?): Long {
         return list?.sumOf { row ->
             val game = row.split(" ")
-            val opponent = Hand.values().toList().first { it.opponentHand == game[0] }
-            val player = Hand.values().toList().first { it.playerHand == game[1] }
+            val opponent = Hand.from(game[0])
+            val player = Hand.from(game[1])
             val result = getGameResult(opponent, player)
 
             result.score + player.score
@@ -16,8 +16,8 @@ class DayTwo {
     fun partTwo(list: List<String>?): Long {
         return list?.sumOf { row ->
             val game = row.split(" ")
-            val opponent = Hand.values().toList().first { it.opponentHand == game[0] }
-            val result = Result.values().toList().first { it.symbol == game[1] }
+            val opponent = Hand.from(game[0])
+            val result = Result.from(game[1])
             val player = getPlayerHand(opponent, result)
 
             result.score + player.score
@@ -50,12 +50,23 @@ class DayTwo {
     enum class Hand(val opponentHand: String, val playerHand: String, val score: Long) {
         ROCK("A", "X", 1L),
         PAPER("B", "Y", 2L),
-        SCISSORS("C", "Z", 3L)
+        SCISSORS("C", "Z", 3L);
+
+        companion object {
+            fun from(symbol: String): Hand {
+                return values().toList().firstOrNull { it.opponentHand == symbol }
+                    ?: values().toList().first { it.playerHand == symbol }
+            }
+        }
     }
 
     enum class Result(val score: Long, val symbol: String) {
         LOSE(0L, "X"),
         DRAW(3L, "Y"),
-        WIN(6L, "Z")
+        WIN(6L, "Z");
+
+        companion object {
+            fun from(symbol: String) = values().toList().first { it.symbol == symbol }
+        }
     }
 }
