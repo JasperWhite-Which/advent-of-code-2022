@@ -2,7 +2,7 @@
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 
-class DayTest {
+class DayTest: TestUtils() {
 
     @Nested
     inner class PartOne {
