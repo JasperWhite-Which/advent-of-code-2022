@@ -1,23 +1,23 @@
-package dectwo
+package weekone
 
 import TestUtils
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
+import weekone.DayFive
 
-class DayTwoTest : TestUtils() {
-
-    // Tests for Day 2 Question 1
+class DayFiveTest : TestUtils() {
+    // Tests for Day 5 Question 1
     @Nested
     inner class PartOne {
         @Test
         fun example() {
-            val fileName = "dec-two/example.txt"
+            val fileName = "dec-five/example.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayTwo().partOne(inputData)
-            val expected = 15L
+            val actual = DayFive().partOne(inputData)
+            val expected = 0L
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)
@@ -25,39 +25,38 @@ class DayTwoTest : TestUtils() {
 
         @Test
         fun question() {
-            val fileName = "dec-two/input.txt"
+            val fileName = "dec-five/input.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayTwo().partOne(inputData)
-            val expected = 12_645L
+            val actual = DayFive().partOne(inputData)
+            val expected = 0L
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)
         }
     }
 
-    // Tests for Day 2 Question 2
+    // Tests for Day 5 Question 2
     @Nested
     inner class PartTwo {
         @Test
         fun example() {
-            val fileName = "dec-two/example.txt"
+            val fileName = "dec-five/example.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayTwo().partTwo(inputData)
-            val expected = 12L
+            val actual = DayFive().partTwo(inputData)
+            val expected = 0L
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)
         }
-
         @Test
         fun question() {
-            val fileName = "dec-two/input.txt"
+            val fileName = "dec-five/input.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayTwo().partTwo(inputData)
-            val expected = 11_756L
+            val actual = DayFive().partTwo(inputData)
+            val expected = 0L
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)

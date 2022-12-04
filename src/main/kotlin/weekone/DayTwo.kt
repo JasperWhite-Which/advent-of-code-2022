@@ -1,27 +1,27 @@
-package dectwo
+package weekone
 
 class DayTwo {
 
-    fun partOne(list: List<String>?): Long {
-        return list?.sumOf { row ->
+    fun partOne(list: List<String>): Long {
+        return list.sumOf { row ->
             val game = row.split(" ")
             val opponent = Hand.from(game[0])
             val player = Hand.from(game[1])
             val result = getGameResult(opponent, player)
 
             result.score + player.score
-        } ?: 0L
+        }
     }
 
-    fun partTwo(list: List<String>?): Long {
-        return list?.sumOf { row ->
+    fun partTwo(list: List<String>): Long {
+        return list.sumOf { row ->
             val game = row.split(" ")
             val opponent = Hand.from(game[0])
             val result = Result.from(game[1])
             val player = getPlayerHand(opponent, result)
 
             result.score + player.score
-        } ?: 0L
+        }
     }
 
     private fun getGameResult(opponent: Hand, player: Hand): Result {

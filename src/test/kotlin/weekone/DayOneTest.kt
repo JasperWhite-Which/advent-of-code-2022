@@ -1,10 +1,11 @@
-package decone
+package weekone
 
 import TestUtils
 import assertk.assertThat
 import assertk.assertions.isEqualTo
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
+import weekone.DayOne
 
 class DayOneTest: TestUtils() {
 
@@ -13,7 +14,7 @@ class DayOneTest: TestUtils() {
     inner class PartOne {
         @Test
         fun `test example case`() {
-            val fileName = "dec-one/example.txt"
+            val fileName = "dec-01/example.txt"
             val inputData = readFile(fileName)
 
             val actual = DayOne().partOne(inputData)
@@ -24,7 +25,7 @@ class DayOneTest: TestUtils() {
 
         @Test
         fun `test question case`() {
-            val fileName = "dec-one/input.txt"
+            val fileName = "dec-01/input.txt"
             val inputData = readFile(fileName)
 
             val actual = DayOne().partOne(inputData)
@@ -41,7 +42,7 @@ class DayOneTest: TestUtils() {
     inner class PartTwo {
         @Test
         fun `test example case`() {
-            val fileName = "dec-one/example.txt"
+            val fileName = "dec-01/example.txt"
             val inputData = readFile(fileName)
 
             val actual = DayOne().partTwo(inputData)
@@ -52,7 +53,7 @@ class DayOneTest: TestUtils() {
 
         @Test
         fun `test question case`() {
-            val fileName = "dec-one/input.txt"
+            val fileName = "dec-01/input.txt"
             val inputData = readFile(fileName)
 
             val actual = DayOne().partTwo(inputData)
