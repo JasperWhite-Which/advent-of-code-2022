@@ -3,13 +3,11 @@ package weekone
 class DaySix {
 
     fun partOne(s: String): Int {
-        val subStringSize = 4
-        return getStartIndex(s, subStringSize)
+        return getStartIndex(s, 4)
     }
 
     fun partTwo(s: String): Int {
-        val subStringSize = 14
-        return getStartIndex(s, subStringSize)
+        return getStartIndex(s, 14)
     }
 
     private fun getStartIndex(s: String, subStringSize: Int): Int {
@@ -17,8 +15,6 @@ class DaySix {
     }
 
     private fun isUniqueSubString(s: String, i: Int, subStringSize: Int): Boolean {
-        val subString = s.substring(i - subStringSize, i)
-        val size: Int = subString.toList().toSet().size
-        return size == subStringSize
+        return s.substring(i - subStringSize, i).toList().toSet().size == subStringSize
     }
 }
