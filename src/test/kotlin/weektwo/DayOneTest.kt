@@ -16,7 +16,7 @@ class DayOneTest : TestUtils() {
             val inputData = readFile(fileName)
 
             val actual = DayOne().partOne(inputData)
-            val expected = 0L
+            val expected = 21
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)
