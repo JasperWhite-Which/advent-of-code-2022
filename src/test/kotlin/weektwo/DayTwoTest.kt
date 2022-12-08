@@ -40,7 +40,7 @@ class DayTwoTest : TestUtils() {
     inner class PartTwo {
         @Test
         fun example() {
-            val fileName = "dec-09/example-01.txt"
+            val fileName = "dec-09/example.txt"
             val inputData = readFile(fileName)
 
             val actual = DayOne().partTwo(inputData)

@@ -28,8 +28,10 @@ class DayOneTest : TestUtils() {
             val inputData = readFile(fileName)
 
             val actual = DayOne().partOne(inputData)
-            val expected = 0L
+            val expected = 1688
             println("The result is $actual")
+
+            // not 1969
 
             assertThat(actual).isEqualTo(expected)
         }
@@ -38,24 +40,26 @@ class DayOneTest : TestUtils() {
     // Tests for Day 8 Question 2
     @Nested
     inner class PartTwo {
+
         @Test
         fun example() {
-            val fileName = "dec-08/example-01.txt"
+            val fileName = "dec-08/example.txt"
             val inputData = readFile(fileName)
 
             val actual = DayOne().partTwo(inputData)
-            val expected = 0L
+            val expected = 8
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)
         }
+
         @Test
         fun question() {
             val fileName = "dec-08/input.txt"
             val inputData = readFile(fileName)
 
             val actual = DayOne().partTwo(inputData)
-            val expected = 0L
+            val expected = 410400
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)
