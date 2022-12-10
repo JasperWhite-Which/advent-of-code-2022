@@ -15,8 +15,8 @@ class DayTwoTest : TestUtils() {
             val fileName = "dec-09/example.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayOne().partOne(inputData)
-            val expected = 0L
+            val actual = DayTwo().partOne(inputData)
+            val expected = 13
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)
@@ -27,8 +27,8 @@ class DayTwoTest : TestUtils() {
             val fileName = "dec-09/input.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayOne().partOne(inputData)
-            val expected = 0L
+            val actual = DayTwo().partOne(inputData)
+            val expected = 6406
             println("The result is $actual")
 
             assertThat(actual).isEqualTo(expected)
@@ -43,7 +43,7 @@ class DayTwoTest : TestUtils() {
             val fileName = "dec-09/example.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayOne().partTwo(inputData)
+            val actual = DayTwo().partTwo(inputData)
             val expected = 0L
             println("The result is $actual")
 
@@ -54,7 +54,7 @@ class DayTwoTest : TestUtils() {
             val fileName = "dec-09/input.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayOne().partTwo(inputData)
+            val actual = DayTwo().partTwo(inputData)
             val expected = 0L
             println("The result is $actual")
 
