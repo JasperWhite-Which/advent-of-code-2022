@@ -21,7 +21,28 @@ class DayTwo {
     }
 
     fun partTwo(list: List<String>): Int {
-        return 0
+        var headCurrent = Coordinate(0, 0)
+        var tailCurrent = Coordinate(0, 0)
+
+        val tails = list.map {
+            val sign = it.split(" ")[0]
+            val scalar = it.split(" ")[1].toInt()
+            val direction = Direction.from(sign)
+
+            //
+            val add = (1 .. scalar).toList().map { adjustment ->
+                val records = getRecords(headCurrent, tailCurrent, direction, adjustment)
+                if (scalar == adjustment) {
+                    headCurrent = records.last().head
+                    tailCurrent = records.last().tail
+                }
+                (records.indices).toList().map { index-> records[index].tail }
+            }.flatten().toSet()
+
+            add
+        }.flatten()
+
+        return tails.toSet().size
     }
 
     // Maybe I should do this instead of the getHeadDestination method, return the list of head movements and
