@@ -14,7 +14,7 @@ class DayFive {
             var subPaths = mutableListOf<Coordinate>()
             (0 .. 26).toList().map {
                 val subResult = findNextSubPath(current, current, coordinates, visited, invalids)
-                subPaths = subPaths + subResult.toMutableList()
+//                subPaths = subPaths + subResult.toMutableList()
             }
 //            val result = try {
 //                findNext(start, coordinates, visited, invalids)
@@ -22,12 +22,13 @@ class DayFive {
 //                null
 //            }
 //            val result = getPath(coordinates)
-            val size = result?.size
+//            val size = result?.size
 //
 //            print(" with size $size")
-            size
+//            size
         }
-        return results.minByOrNull { it }!!.toLong()
+//        return results.minByOrNull { it }!!.toLong()
+        return 0L
     }
 
     private fun findNext(
