@@ -7,8 +7,8 @@ class DaySix {
             val l = list[i]
             val r = list[i + 1]
 
-            val right = buildLists(r, 0, emptyList())
             val left = buildLists(l, 0, emptyList())
+            val right = buildLists(r, 0, emptyList())
 
             println(r)
         }
@@ -18,12 +18,14 @@ class DaySix {
 
     private fun buildLists(s: String, i: Int, lists: List<Any>): List<Any> {
         return when (val current = s[i]) {
-            ',' -> buildLists(s, i + 1, lists)
+            ',' -> {
+                buildLists(s, i + 1, lists)
+            }
             '[' -> {
                 if (lists.isEmpty()) {
                     listOf(buildLists(s, i + 1, emptyList()))
                 } else {
-                    buildLists(s, i + 1, emptyList())
+                    lists + buildLists(s, i + 1, emptyList())
                 }
             }
             ']' -> {
