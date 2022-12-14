@@ -43,22 +43,32 @@ class DayThreeTest : TestUtils() {
             val fileName = "dec-10/example.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayThree().partTwo(inputData)
-            val expected = 0L
-            println("The result is $actual")
-
-            assertThat(actual).isEqualTo(expected)
+            DayThree().partTwo(inputData)
+            // result
+            """
+                ##..##..##..##..##..##..##..##..##..##..
+                ###...###...###...###...###...###...###.
+                ####....####....####....####....####....
+                #####.....#####.....#####.....#####.....
+                ######......######......######......####
+                #######.......#######.......#######.....
+            """.trimIndent()
         }
         @Test
         fun question() {
             val fileName = "dec-10/input.txt"
             val inputData = readFile(fileName)
 
-            val actual = DayThree().partTwo(inputData)
-            val expected = 0L
-            println("The result is $actual")
-
-            assertThat(actual).isEqualTo(expected)
+            DayThree().partTwo(inputData)
+            // result
+            """
+                ###..####..##..###..#..#.###..####.###..
+                #..#....#.#..#.#..#.#.#..#..#.#....#..#.
+                #..#...#..#....#..#.##...#..#.###..###..
+                ###...#...#.##.###..#.#..###..#....#..#.
+                #....#....#..#.#....#.#..#....#....#..#.
+                #....####..###.#....#..#.#....####.###..
+            """.trimIndent()
         }
     }
 }
